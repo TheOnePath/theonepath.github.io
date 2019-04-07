@@ -1,34 +1,93 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My CV - Online</title>
+		<title>PyChatRoom</title>
 		<meta charset="UTF-8">
-		<meta http-equiv="refresh" content="3; url=https://theonepath.github.io/cv.html?">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="w3.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-		<style>
-			body, h1 {font-family: "Raleway", sans-serif}
-			body, html {height: 100%}
-			.bgimg {
-				background-image: url('images/coming-soon.png');
-				min-height: 100%;
-				background-position: center;
-				background-size: cover;
-			}
+		<link rel="stylesheet" href="cogswork.css">
+		<style type="text/stylesheet">
+			<!--@font-face{
+				font-family: "Flux";
+				font-style: normal;
+				font-weight: 300;
+				src: local ("Flux Medium"), url (https://github.com/TheOnePath/flux-font-family/blob/master/flux-regular.OTF) format ('woff2');
+			}-->
 		</style>
-		<!--<link rel="preload" href="https://demo-cv.html?">-->
+		<style>
+			html, body, footer, h1,h2,h3,h5,p {
+				font-family: "Flux", monospace;
+				background-color: #002240;
+			}
+			h1,h2,h3,h4,h5,p {
+				padding-right: 32px;
+				padding-left: 32px;
+			}
+
+			.cwu-scrollbar::-webkit-scrollbar {width: 10px;}.cwu-scrollbar::-webkit-scrollbar-track {background: #001830;}
+			.cwu-scrollbar::-webkit-scrollbar-thumb {background: #00264c;}.cwu-scrollbar::-webkit-scrollbar-thumb:hover {background: #003366;}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("a").on('click', function(event) {
+				if (this.hash !== "") {
+				  event.preventDefault();
+				  var hash = this.hash;
+				  
+				  $('html, body').animate({
+					scrollTop: $(hash).offset().top
+				  }, 1200, function(){
+			 
+					window.location.hash = hash;
+				  });
+				}
+			  });
+			});
+		</script>
 	</head>
-	<body>
-		<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-			<div class="w3-display-topleft w3-padding-large w3-large">
-			This page with auto-redirect.
-		</div>
-			<div class="w3-display-middle w3-center">
-				<h1 class="w3-jumbo w3-animate-bottom">COMING SOON</h1>
-				<hr class="w3-border-grey" style="margin:auto;width:40%"><br>
-				<a class="w3-large" href="https://theonepath.github.io/cv.html?" target="_self">Redirect</a>
+	<body class="cwu-scrollbar">
+		<div class="">
+			<div class="w3-display-container w3-animate-opacity w3-text-white">
+				<div class="w3-bar  w3-card-4" style="background-color:#002240;">
+					<div class="w3-bar-item">
+						<a href="#"><img src="PyChatRoom.png" width="7.49999%"></img></a>
+						<div class="w3-right w3-xlarge">
+							<a class="w3-btn" href="#"><span>What's New</span></a>
+							<a class="w3-btn" href="#"><span>About</span></a>
+							<a class="w3-btn" href="#"><span>Login</span></a>
+							<a class="w3-btn" href="#"><span>Sign Up</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="w3-center w3-padding-16">
+					<img src="PyChatRoom.png" width="50%"></img>
+				</div>
+				<div class="w3-center w3-text-white w3-card-4">
+					<h1 class="w3-jumbo">Welcome to <b>PyChatRoom</b></h1><br>
+					<hr class="w3-border-white" style="margin:auto;width:40%;border-width:2px">
+					<p class="w3-xxlarge">The chat room implemented with Python.</p>
+				</div>
+				<div class="w3-center w3-text-white w3-card-4">
+					<h1 class="w3-jumbo">What's New in <b>PyChatRoom</b></h1><br>
+					<hr class="w3-border-white" style="margin:auto;width:40%;border-width:2px">
+					<p class="w3-xxlarge">*DISCLAIMER: <b>PyChatRoom</b> is currently under development*</p>
+				</div>
+				<div class="w3-center w3-text-white w3-card-4">
+					<h1 class="w3-jumbo">About <b>PyChatRoom</b></h1><br>
+					<hr class="w3-border-white" style="margin:auto;width:40%;border-width:2px">
+					<p class="w3-xxlarge"><b>PyChatRoom</b> is a cross-platform communication application specialising is text-based media conversations.</p>
+					<p class="w3-xxlarge">There is no development for <b>PyChatRoom</b> to become global, nor developed on a mass scale. It is a simple project for a greater understanding into programming.</p>
+					<p class="w3-xxlarge"><b>PyChatRoom</b> started development on 3rd April 2019 and is still currently in development. 
+					Studio Cogswork,Ltd. (A non-legimate, project company), is currently developing the project with a one man guy building the project, TheOnePath (Alias.)</p>
+					<p class="w3-xxlarge">Special Thanks: Whilst this is a standalone project, research on development is made possible by the Python community.</p>
+					
+				</div>
 			</div>
 		</div>
+		<footer class="w3-center w3-text-white">
+			<p class="cwu-text-tiny">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS</a> and <a href="./assets/styles/cogswork.css" target="_blank">Cogswork.CSS</a>, Backend by <a href="https://pages.github.com" target="_blank">Github Pages</a>, Design by Ethan Smith-Coss</p>
+			<p class="cwu-text-micro">&copy Studio Cogswork Ltd., 2019</p>
+		</footer>
 	</body>
 </html>
