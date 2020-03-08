@@ -3,9 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Demo</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="./style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <style>
             body, h1,h2,h3,h4,h5,h6{
                 font-family: 'Courier New', Courier, monospace;
@@ -23,35 +24,86 @@
             }
         </style>
         <script>
-            function onclicked() {
-                alert("You clicked the card!");
-            }
+            $(document).ready(function(){
+                animateCards();
+            });
         </script>
     </head>
     <body>
         <div class="w3-content w3-center w3-margin-top">
-            <h1>DEMO</h1>
+            <h1 id="title" onclick="window.location.reload()">DEMO</h1>
         </div>
         <div class="w3-container box">
-            <div class="card w3-margin-right" onclick="onclicked()">
+            <div id="card1" class="card w3-margin-right collapse">
                 <div class="w3-content">
                     <h1>Card 1</h1>
                     <p>Additional information.</p>
                 </div>
             </div>
-            <div class="card w3-margin-right" onclick="onclicked()">
+            <div id="card2" class="card w3-margin-right collapse">
                 <div class="w3-content">
                     <h1>Card 2</h1>
                     <p>That doesn't concern...</p>
                 </div>
             </div>
-            <div class="card" onclick="onclicked()">
+            <div id="card3" class="card collapse">
                 <div class="w3-content">
                     <h1>Card 3</h1>
                     <p>YOU!</p>
                 </div>
             </div>
         </div>
+        <script>
+            $(".collapse").one("click", function(){
+                console.log("clicked")
+                $(".collapse").animate({
+                    opacity: 0.4,
+                    height: "toggle"
+                }, 800, function(){})
+                $(this).delay(400).animate({
+                    maxHeight: "50%",
+                    opacity: 1,
+                    height: "toggle"
+                }, 800, function() {})
+            });
+        </script>
+        <script>
+            function animateCards(){
+                var obj1 = document.getElementById("card1");
+                var obj2 = document.getElementById("card2");
+                var obj3 = document.getElementById("card3");
+                obj1.animate([
+                    {// from
+                        opacity: 0.25,
+                        transform: 'translateY(-150%)'
+                    },
+                    {// to
+                        opacity: 1,
+                        transform: 'translateY(0)'
+                    }
+                ], {duration: 1000});
+                obj2.animate([
+                    {// from
+                        opacity: 0.25,
+                        transform: 'translateY(-150%)'
+                    },
+                    {// to
+                        opacity: 1,
+                        transform: 'translateY(0)'
+                    }
+                ], {duration: 800});
+                obj3.animate([
+                    {// from
+                        opacity: 0.25,
+                        transform: 'translateY(-150%)'
+                    },
+                    {// to
+                        opacity: 1,
+                        transform: 'translateY(0)'
+                    }
+                ], {duration: 600});
+            }
+        </script>
         <footer>
             <p>A footer. Not much more.</p>
         </footer>
