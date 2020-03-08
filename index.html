@@ -73,7 +73,7 @@
                 let result = await promise;
                 function func(){
                     try {
-                        window.history.replaceState({}, "", "\x70\x61\x67\x65\x73\x2F" + $(html_element).attr('id') + ".html");
+                        window.history.pushState({}, "", "\x70\x61\x67\x65\x73\x2F" + $(html_element).attr('id') + ".html");
                     } catch (SecurityError) {
                         window.location.replace("\x70\x61\x67\x65\x73\x2F" + $(html_element).attr('id') + ".html");
                     }
