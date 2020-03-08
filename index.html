@@ -54,18 +54,32 @@
             </div>
         </div>
         <script>
-            $(".collapse").one("click", function(){
-                console.log("clicked")
-                $(".collapse").animate({
-                    opacity: 0.4,
-                    height: "toggle"
-                }, 800, function(){})
-                $(this).delay(400).animate({
-                    maxHeight: "50%",
-                    opacity: 1,
-                    height: "toggle"
-                }, 800, function() {})
-            });
+            var html_element;
+            (async function func(){
+                var promise = await new Promise(resolve => {
+                    $(".collapse").one("click", function(){
+                        html_element = $(this)
+                        $(".collapse").animate({
+                            opacity: 0.4,
+                            height: "toggle"
+                        }, 800, function(){});
+                        $(this).delay(400).animate({
+                                maxHeight: "50%",
+                                opacity: 1,
+                                height: "toggle"
+                            }, 800, function(){resolve()})
+                    });
+                })
+                let result = await promise;
+                function func(){
+                    try {
+                        window.history.replaceState({}, "", "\x70\x61\x67\x65\x73\x2F" + $(html_element).attr('id') + ".html");
+                    } catch (SecurityError) {
+                        window.location.replace("\x70\x61\x67\x65\x73\x2F" + $(html_element).attr('id') + ".html");
+                    }
+                }
+                setTimeout(func, 800);
+            })();
         </script>
         <script>
             function animateCards(){
