@@ -50,10 +50,14 @@
         </div>
         <script>
             var html_element_id;
+            function disableCards(){
+                    document.getElementById(html_element_id).style.pointerEvents = "none";
+            };
             (async function func(){
                 var promise = await new Promise(resolve => {
                     $(".collapse").one("click", function(){
-                        html_element_id = $(this).attr("id")
+                        html_element_id = $(this).attr("id");
+                        disableCards();
                         $(".collapse").animate({
                             opacity: 0.4,
                             height: "toggle"
@@ -77,7 +81,6 @@
                     });
                 })
                 let result = await promise;
-                console.log(html_element_id)
                 function func(){
                     window.location.assign("./pages/" + html_element_id + ".html");
                 }
