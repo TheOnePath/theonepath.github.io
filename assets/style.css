@@ -1,51 +1,47 @@
-.card{
-    width: 25%;
-    height: 50%;
-    padding: 0px 32px;
-    float: left;
-    text-align: center;
-    color: black;
+.search{
+    position: relative;
+    left: calc(50% - (33.33333% / 2));
+    width: 33.33333%;
+    text-align: left;
+    padding: 10px 20px;
     background-color: white;
-    border: 2px solid lightslategray;
-    border-radius: 25px;
+    border-radius: 50px;
+    margin-top: 20vh;
 }
-@media only screen and (min-width: 601px){
-    #title:hover {
-        cursor: pointer;
-        border: 0px solid;
-        background-color: whitesmoke;
-        border-radius: 25px;
-    }
-    .box {
-        height: 75vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .card:hover{
-        cursor: pointer;
-        background-color: whitesmoke;
-        box-shadow:0 4px 16px 0 rgba(0,0,0,0.3);
-        animation-name: bounce;
-        animation-duration: 1s;
-    }
+.search img{
+    position: absolute;
+    text-align: center;
+    top: calc(50% - 10px);
+    float: left;
+    width: 20px;
+    opacity: .8;
 }
-@keyframes bounce {
-    0% {transform: translate(0, 0);}
-    40% {transform: translate(0, -16px);}
-    60% {transform: translate(0, 0);}
-    80% {transform: translate(0, -8px);}
-    100% {transform: translate(0, 0px);}
+.search:hover{
+    box-shadow: 2px 2px 12px rgba(124, 124, 124, 0.75);
 }
-@media screen and (max-width: 601px){
-    body, h1,h2,h3,h4,h5,h6{
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: 400;
-    }
-    .card{
-        width: 100%;
-        color: black;
-        background-color: white;
-        transform: scale(0.75);
-    }
+.center{
+    width: auto;
+    text-align: center;
+}
+.cursor-animate{
+    animation: blinkTextCursor 800ms steps(50) infinite;
+}
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 2s 2.5s;
+}
+.fly-in{
+    animation: flyIn 2s 1 normal;
+}
+@keyframes blinkTextCursor {
+    from {color: rgba(255, 255, 255, 0.9);}
+    to {color: transparent;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes flyIn {
+    from {transform: translateX(-150%);}
+    to {transform: translateX(0);}
 }

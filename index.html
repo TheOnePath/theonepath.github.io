@@ -2,95 +2,91 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Demo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="./assets/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>#</title>
+        <link rel="stylesheet" href="./style.css"/>
+        <script>
+            function title_update(word){
+                document.title = "PHP - " + word
+            }
+        </script>
         <style>
-            body, h1,h2,h3,h4,h5,h6{
-                font-family: 'Courier New', Courier, monospace;
-                font-weight: 400;
-            }
             body{
-                width: 100%;
-                height: 100%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: 400;
+                background-color: #6c7eb7;
+                color: white;
             }
-            footer {
-                position: fixed;
-                width: 100%;
-                text-align: center;
-                bottom: 0;
+            h1{
+                margin-top: 25vh;
+                font-weight: 600;
+                font-size: 3em;
+                word-spacing: .20em;
+                letter-spacing: .25em;
+            }
+            input, select{
+                border: none;
+                width: calc(100% - 70px);
+                padding: 10px 0px;
+                font-family: inherit;
+                font-weight: 400;
+                font-size: 1.5em;
+                margin-left: 40px;
             }
         </style>
     </head>
     <body>
-        <div class="w3-content w3-center w3-margin-top">
-            <h1 id="title" onclick="window.location.reload()">DEMO</h1>
+        <div class="center">
+            <h1 id="typewriter" class="fly-in"><div class="border">PHP<b class="fade-in">|</b></div></h1>
         </div>
-        <div class="w3-container box">
-            <div id="card1" class="card w3-margin-right collapse">
-                <div class="w3-content">
-                    <h1>Card 1</h1>
-                    <p>Additional information.</p>
-                </div>
-            </div>
-            <div id="card2" class="card w3-margin-right collapse">
-                <div class="w3-content">
-                    <h1>Card 2</h1>
-                    <p>That doesn't concern...</p>
-                </div>
-            </div>
-            <div id="card3" class="card collapse">
-                <div class="w3-content">
-                    <h1>Card 3</h1>
-                    <p>YOU!</p>
-                </div>
+        <div class="center">
+            <div id="search" class="search fade-in">
+                <img src="https://image.flaticon.com/icons/svg/49/49116.svg"/>
+                <form action="https://google.com/search" method="get">
+                    <input type="hidden"/>
+                    <input type="text" name="q" placeholder="Search..."/>
+                </form>
             </div>
         </div>
         <script>
-            var html_element_id;
-            function disableCards(){
-                    document.getElementById(html_element_id).style.pointerEvents = "none";
-            };
-            (async function func(){
-                var promise = await new Promise(resolve => {
-                    $(".collapse").one("click", function(){
-                        html_element_id = $(this).attr("id");
-                        disableCards();
-                        $(".collapse").animate({
-                            opacity: 0.4,
-                            height: "toggle"
-                        }, 800, function(){});
-                        $(this).delay(400).animate({
-                            maxHeight: "50%",
-                            opacity: 1,
-                            height: "toggle"
-                        }, 800, function(){})
-                        .delay(1200).animate({
-                            deg: 720
-                        }, { duration: 1400, specialEasing: "easeOutBounce",
-                            step: function(now){
-                                $(this).css({
-                                    transform: "rotateY(" + now + "deg)",
-                            })}
-                        })
-                        .animate({
-                            height: "toggle"
-                        }, 600, function(){resolve()})
-                    });
-                })
-                let result = await promise;
-                function func(){
-                    window.location.assign("./pages/" + html_element_id + ".html");
+            const dict = ["Pointless Headache Program", "PTSD Hortative Programming", "Problematic Hate-crime Program", "Pretty Horrific Programming"]
+            var index = 0;
+            var item = 0;
+            function visible(){
+                var elem = document.getElementById("search").style.opacity = "1"
+            }
+            function removeText(){
+                index = 0
+                let cursor = document.createElement("b")
+                cursor.classList.add("cursor-animate")
+
+                document.getElementById("typewriter").innerHTML = ""
+                cursor.appendChild(document.createTextNode("|"), cursor)
+                document.getElementById("typewriter").appendChild(cursor)
+
+                setTimeout(typeWriter, 1000, dict[item], 100)
+                if (item < dict.length - 1){
+                    item ++
+                } else {item = 0}
+            }
+
+            function typeWriter(text, speed) {
+                if (index < text.length){
+                    var node = document.createTextNode(text.charAt(index))
+                    var elem = document.getElementById("typewriter")
+                    elem.insertBefore(node, elem.childNodes[index])
+
+                    index ++
+                    setTimeout(typeWriter, speed, text, speed)
                 }
-                setTimeout(func, 800);
-            })();
+                else {
+                    setTimeout(removeText, 2000)
+                }
+            }
+            title_update(dict[Math.floor(Math.random() * Math.floor(dict.length))])
+
+            setTimeout(removeText, 4500)
+            setTimeout(visible, 4500)
         </script>
-        <!-- JS Animations -->
-        <script src="./assets/animations.js"></script>
-        <footer>
-            <p>A footer. Not much more.</p>
-        </footer>
     </body>
 </html>
