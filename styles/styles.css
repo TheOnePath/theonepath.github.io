@@ -1,0 +1,13 @@
+.animate-up{
+    animation-name: fly-up;
+    animation-duration: 800ms;
+}
+@keyframes fly-up {
+    from{
+        opacity: 0;
+        transform: translateY(150%);
+    }
+    to{
+        opacity: 1;
+    }
+}
