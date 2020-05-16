@@ -16,9 +16,13 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-section{
+section {
     background-color: #e7e5d7 !important; 
     margin: 12rem auto;
+}
+.theme {
+    background-color: #e7e5d7 !important;
+    border-radius: 5px;
 }
 .logo-badge {
     width: 30%;
@@ -52,9 +56,35 @@ section{
 .signin {
     background-color: #e7e5d7 !important;
 }
-@media screen and (min-width: 1600px){
+.profile-icon {
+    width: 66.66666%;
+    margin: 1em 1em;
+}
+.announce-profile {
+    background-color: white !important;
+    padding: 1rem;
+}
+.announce-card{
+    background-color: white !important;
+    padding: 1rem;
+    margin-bottom: 1em;
+}
+.announce-message {
+    text-align: left;
+    padding: 1rem;
+    background-color: white !important;
+}
+@media screen and (min-width: 601px){
     .font-24 {
         font-size: 2.4rem;
+    }
+    .announce-card {
+        padding-right: 2rem;
+    }
+    .cosy {
+        padding: 1rem;
+        padding-right: 2rem;
+        margin-bottom: 1em;
     }
 }
 @media screen and (max-width: 1600px){
@@ -77,6 +107,8 @@ section{
     }
     h1 { font-size: 1.3rem; }
     h2 { font-size: 1.1rem; }
+    h3 { font-size: 1.0rem; }
+    p { font-size: 0.8rem; }
     section{
         margin: 6rem auto;
     }
@@ -94,10 +126,24 @@ section{
     }
     .content {
         background-color: white;
-        margin: 4em 1em;
+        margin: 4em 0em;
         margin-top: 4em;
     }
     .nav-title {
         font-size: 0rem !important;
+    }
+    .announce-card {
+        padding: 0.5rem;
+    }
+    .announce-profile {
+        background-color: white !important;
+        padding-bottom: 0.5rem;
+    }
+    .cosy {
+        padding: 0.5rem;
+        margin-bottom: 1em;
+    }
+    .announce-message {
+        margin-top: 1em;
     }
 }
