@@ -1,0 +1,89 @@
+/* Animate.css custom styles */
+.animate__animated.animate__heartBeat {
+    animation-duration: 2.5s;
+    animation-delay: 3s;
+}
+.animate__animated.animate__flipInX {
+    animation-delay: 2s;
+}
+:root {
+    animation-duration: 900ms;
+    animation-delay: 0.9s;
+}
+/* website styles - global */
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/379347809205485568/605847309627949087/unknown.png"); /*https://cdn.discordapp.com/attachments/600423511520968706/605816387448995870/bannernew.png*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+section{
+    background-color: #e7e5d7 !important; 
+    margin: 12rem auto;
+}
+.logo-badge {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    padding: 1.5rem 1.5rem;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.footer-container{
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: .25em 0;
+}
+.content{
+    background-color: white;
+    margin: 4em 1em;
+    margin-top: 12em;
+}
+.nav-logo{
+    width: 5em;
+    padding: 0.5rem;
+}
+.nav-title{
+    color: #e7e5d7;
+    margin: auto 2rem
+}
+@media screen and (max-width: 1600px){
+    .logo-badge {
+        width: 20%;
+    }
+    section{
+        margin: 6rem auto;
+    }
+    body {
+        background-size: 100%;
+    }
+}
+@media screen and (max-width: 601px){
+    body{
+        background-image: none;
+    }
+    h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.1rem; }
+    section{
+        margin: 6rem auto;
+    }
+    .footer-container{
+        display: inline-block;
+        justify-content: left;
+        font-size: 0.9em;
+    }
+    .logo-badge {
+        position: relative;
+        width: 50%;
+    }
+    .content {
+        background-color: white;
+        margin: 4em 1em;
+        margin-top: 4em;
+    }
+    .nav-title {
+        font-size: 0rem !important;
+    }
+}
