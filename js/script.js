@@ -22,3 +22,14 @@ function adjustBg(){
         }
     }
 }
+function a(){
+    document.querySelector('#header').remove();
+    let window_w = window.innerWidth | document.documentElement.clientWidth;
+    
+    if (window_w < 601){
+        var containers = document.querySelectorAll('.container');
+        [].forEach.call(containers, function(m){
+            m.classList.remove("container");
+        });
+    }
+};
