@@ -16,18 +16,20 @@
                 font-family: 'Lexend Deca', sans-serif;
                 font-weight: 400;
                 scroll-behavior: smooth;
+                background-size: cover !important;
             }
         </style>
     </head>
-    <body>
+    <body onload="e()">
         <form class="form-signin card shadow signin">
             <div class="text-center mb-4">
                 <img class="shadow-sm shadow logo-sm" src="https://cdn.discordapp.com/attachments/603221108644249600/710948573789028462/GR_logo.gif" style="width: 50%; border-radius: 10px; margin: 1em;"/>
                 <h1 class="h3 mb-3 font-24"><br>Gameroom Server of Friends</h1>
             </div>
+            <p>Discord ID</p>
             <div class="form-label-group">
                 <input type="discord" id="inputDiscordId" class="form-control" placeholder="Discord ID" required="" autofocus="">
-                <label for="inputDiscordId">Discord ID</label>
+                <label id="label-text" for="inputDiscordId"></label>
             </div>
             <div class="checkbox mb-3">
                 <label>
@@ -36,10 +38,16 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <p class="mt-5 mb-3 text-muted text-center">&copy 2020-21</p>
-          </form>
+        </form>
     </body>
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        function e(){
+            let placeholders = ["Example#1234", "Boneless Pizza#7196", "uwotmate?#3497", "Thot Patrol#0245", "Loading...#6460"]
+            var label = document.getElementById('label-text').innerHTML = placeholders[Math.floor(Math.random() * placeholders.length)];
+        }
+    </script>
 </html>
