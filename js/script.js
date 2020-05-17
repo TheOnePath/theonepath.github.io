@@ -25,6 +25,16 @@ function adjustBg(){
     }
 }
 
+function rmContainers(){
+    let window_w = window.innerWidth | document.documentElement.clientWidth;
+    if (window_w < 601){
+        var containers = document.querySelectorAll('.container');
+            [].forEach.call(containers, function(m){
+                m.classList.remove("container");
+        });
+    }
+}
+
 function viewMore(c){
     c.classList.add('view-more');
 };
@@ -60,10 +70,7 @@ function a(){
     if (window_w < 601){
         document.querySelector('#header').remove();
 
-        var containers = document.querySelectorAll('.container');
-        [].forEach.call(containers, function(m){
-            m.classList.remove("container");
-        });
+        rmContainers();
     }
 
     var target = document.querySelectorAll('.announce-message');
