@@ -15,6 +15,7 @@ body {
     background-image: url("https://cdn.discordapp.com/attachments/624211824094478357/711269801372287058/gsof_banner.png"); /*https://cdn.discordapp.com/attachments/600423511520968706/605816387448995870/bannernew.png*/
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover !important;
 }
 section {
     background-color: #e7e5d7 !important; 
@@ -57,12 +58,17 @@ section {
     background-color: #e7e5d7 !important;
 }
 .profile-icon {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     width: 66.66666%;
-    margin: 1em 1em;
+    margin: 1em 0;
+    border-radius: 5px;
 }
 .announce-profile {
     background-color: white !important;
     padding: 1rem;
+    text-align: left;
 }
 .announce-card{
     background-color: white !important;
@@ -73,6 +79,12 @@ section {
     text-align: left;
     padding: 1rem;
     background-color: white !important;
+}
+.detail {
+    margin: 1em;
+    padding: 0.5rem 2rem;
+    border-left: 3px solid rgba(128, 128, 128, 0.5);
+    border-radius: 10px;
 }
 @media screen and (min-width: 601px){
     .font-24 {
@@ -94,20 +106,17 @@ section {
     section{
         margin: 6rem auto;
     }
-    body {
-        background-size: 100%;
-    }
     .logo-sm {
         width: 40% !important;
     }
 }
 @media screen and (max-width: 601px){
-    body{
-        background-image: none;
+    body {
+        background-position: center;
     }
-    h1 { font-size: 1.3rem; }
-    h2 { font-size: 1.1rem; }
-    h3 { font-size: 1.0rem; }
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1.1rem; }
     p { font-size: 0.8rem; }
     section{
         margin: 6rem auto;
