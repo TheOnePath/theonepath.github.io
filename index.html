@@ -35,10 +35,30 @@
                 <a href=""><img class="nav-logo" src="https://cdn.discordapp.com/attachments/603221108644249600/643075627343151105/finalColoured.png"/></a>
                 <div class="row">
                     <h2 class="nav-title" style="text-align: right;">Gameroom Server of Friends</h2>
-                    <div class="nav-sections">
+                    <div class="navigation">
                         <h2>|</h2>
-                        <h2><a href="#news-section">News</a></h2> <!-- pages/news.html -->
-                        <h2><a href="pages/media.html">Media</a></h2>
+                        <div id="headings" class="nav-sections">
+                            <a href="#news-section">News</a> <!-- pages/news.html -->
+                            <a href="pages/media.html">Media</a>
+                        </div>
+                        <h1 class="triple-bar" onclick="dropMenuNav()">&#8801</h1>
+                        <div id="dropDownMenu" class="dropdown-content cosy">
+                            <ul style="list-style-type: none; padding: 0;">
+                                <div id="overflow-headings" style="margin-right: 2em"></div><hr class="nav-hr">
+                                <li>
+                                    <a>Users List</a>
+                                <li>
+                                    <a>Rules & Roles</a><hr class="nav-hr">
+                                </li>
+                                </li>
+                                <li>
+                                    <a>GSoF Credits</a>
+                                </li>
+                                <li>
+                                    <a>Sign Out</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
