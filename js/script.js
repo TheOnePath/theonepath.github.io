@@ -25,6 +25,28 @@ function adjustBg(){
     }
 }
 
+function dropMenuNav() {
+    document.getElementById("dropDownMenu").classList.toggle("show");
+}
+
+/*var sideNavOpen = false;
+function navSide(){
+    var event = document.getElementById("sideNav");
+    
+    if (sideNavOpen) {
+        event.classList.remove("nav-open");
+        event.classList.add("nav-closed");
+
+        sideNavOpen = false;
+    } else {
+        event.classList.remove("nav-closed");
+        event.classList.add("nav-open");
+
+        sideNavOpen = true;
+    }
+    console.log(sideNavOpen);
+}*/
+
 function rmContainers(){
     let window_w = window.innerWidth | document.documentElement.clientWidth;
     if (window_w < 601){
@@ -65,10 +87,31 @@ function rmViewLess(event){
     }
 }
 
-function a(){    
+function a(){
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.triple-bar')) {
+            var m = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < m.length; i++) {
+                var openDropdown = m[i];
+                if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+                }
+            }
+        }
+    });
+
     let window_w = window.innerWidth | document.documentElement.clientWidth;
     if (window_w < 601){
-        document.querySelector('#header').remove();
+        try {
+            document.querySelector('#header').remove();
+        } catch { console.error() }
+
+        var oldParent = document.getElementById('headings');
+        var newParent = document.getElementById('overflow-headings');
+
+        while (oldParent.childNodes.length > 0) {
+            newParent.appendChild(oldParent.childNodes[0]);
+        }
 
         rmContainers();
     }
