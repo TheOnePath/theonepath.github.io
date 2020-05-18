@@ -123,6 +123,49 @@ section {
     cursor: pointer;
     color: rgba(116, 151, 255, 0.945);
 }
+.navigation h1, .navigation a, .navigation h2 {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin: 0 0.5em;
+    color: #e7e5d7 !important;
+}
+.navigation a:hover {
+    color: gray !important;
+    cursor: pointer;
+    text-decoration: none;
+}
+.nav-sections {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow: auto;
+    background-color: #e7e5d7;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 10px;
+    z-index: 1000;
+}
+.dropdown-content a {
+    color: black !important;
+    padding: 0.5rem;
+    margin-right: 2em;
+    font-size: 1.2rem;
+}
+.dropdown-content a:hover {
+    color: gray !important;
+    cursor: pointer;
+}
+.show {
+    display: block;
+}
+.nav-hr {
+    width: 100%;
+    border-width: 2px;
+    margin: 1em 0;
+}
 @media screen and (min-width: 601px){
     .font-24 {
         font-size: 2.4rem;
@@ -138,15 +181,6 @@ section {
     .seek:hover {
         box-shadow:0 2px 16px 0 rgba(0,0,0,0.2);
     }
-    .nav-sections > h2 {
-        display: inline-flex;
-        margin: 0 0.5em;
-        color: #e7e5d7 !important;
-    }
-    .nav-sections > h2 a {
-        text-decoration: none !important;
-        color: #e7e5d7 !important;
-    }
     .album-content{
         margin: 4em 2em;
         padding: 2rem;
@@ -155,6 +189,14 @@ section {
         margin: 2em auto;
         padding: 0 2rem;
         padding-top: 2rem;
+    }
+    .triple-bar {
+        margin: 0 1em;
+        padding: 0 0.5em;
+    }
+    .triple-bar:hover{
+        cursor: pointer;
+        color: #8a8986 !important;
     }
 }
 @media screen and (max-width: 1600px){
@@ -221,5 +263,16 @@ section {
         margin: 0.5em 0;
         padding: 0 2rem;
         padding-top: 2rem;
+    }
+    .dropdown-content {
+        width: 75%;
+        border-bottom-left-radius: 0;
+    }
+    .navigation h2 {
+        display: none;
+    }
+    
+    .navigation h1 {
+        font-size: 3.2rem;
     }
 }
