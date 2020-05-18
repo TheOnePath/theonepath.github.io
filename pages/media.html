@@ -30,16 +30,24 @@
             }
         </style>
     </head>
-    <body onload="rmContainers();" onscroll="adjustBg();">
+    <body onload="a();" onscroll="adjustBg();">
         <nav>
             <div class="navbar fixed-top" style="background-color: rgb(57, 68, 102);">
-                <a href=""><img class="nav-logo" src="https://cdn.discordapp.com/attachments/603221108644249600/643075627343151105/finalColoured.png"/></a>
+                <a href="../index.html"><img class="nav-logo" src="https://cdn.discordapp.com/attachments/603221108644249600/643075627343151105/finalColoured.png"/></a>
                 <div class="row">
                     <h2 class="nav-title" style="text-align: right;">Gameroom Server of Friends</h2>
-                    <div class="nav-sections">
+                    <div class="navigation">
                         <h2>|</h2>
-                        <h2><a href="news.html">News</a></h2>
-                        <h2><a href="">Media</a></h2>
+                        <div id="headings" class="nav-sections">
+                            <a href="../pages/news.html">News</a>
+                            <a href="">Media</a>
+                        </div>
+                        <h1 class="triple-bar" onclick="dropMenuNav()">&#8801</h1>
+                        <div id="dropDownMenu" class="dropdown-content cosy">
+                            <div id="overflow-headings" style="padding-right: 2rem;"></div>
+                            <a>Rules & Credits</a>
+                            <hr class="nav-hr"><a>Sign Out</a>
+                        </div>
                     </div>
                 </div>
             </div>
