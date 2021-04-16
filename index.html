@@ -1,222 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>Gameroom Server of Friend - Official Site</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"/> 
-        <link rel="stylesheet" href="assets/styles.css"/>
-        <script src="./js/script.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>#</title>
+        <link rel="stylesheet" href="./assets/style.css"/>
+        <script>
+            function title_update(word){
+                document.title = "PHP - " + word
+            }
+        </script>
         <style>
-            html, body {
-                font-family: 'Lexend Deca', sans-serif;
+            body{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 font-weight: 400;
-                scroll-behavior: smooth;
+                background-color: #6c7eb7;
+                color: white;
             }
-            body::-webkit-scrollbar { width: 0.6em; }
-            body::-webkit-scrollbar-track {
-                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            h1{
+                margin-top: 25vh;
+                font-weight: 600;
+                font-size: 3em;
+                word-spacing: .20em;
+                letter-spacing: .25em;
             }
-            body::-webkit-scrollbar-thumb {
-                background-color: rgb(70, 70, 70);
-            }
-            hr {
-                border-width: 2px;
-                margin-bottom: 3em;
+            input, select{
+                border: none;
+                width: calc(100% - 70px);
+                padding: 10px 0px;
+                font-family: inherit;
+                font-weight: 400;
+                font-size: 1.5em;
+                margin-left: 40px;
             }
         </style>
     </head>
-    <body onload="a()" onscroll="adjustBg()">
-        <nav>
-            <div class="navbar fixed-top" style="background-color: rgb(57, 68, 102);">
-                <a href=""><img class="nav-logo" src="https://cdn.discordapp.com/attachments/603221108644249600/643075627343151105/finalColoured.png"/></a>
-                <div class="row">
-                    <h2 class="nav-title" style="text-align: right;">Gameroom Server of Friends</h2>
-                    <div class="navigation">
-                        <h2>|</h2>
-                        <div id="headings" class="nav-sections">
-                            <a href="#news-section">News</a> <!-- pages/news.html -->
-                            <a href="pages/media.html">Media</a>
-                        </div>
-                        <h1 class="triple-bar" onclick="dropMenuNav()">&#8801</h1>
-                        <div id="dropDownMenu" class="dropdown-content cosy">
-                            <ul style="list-style-type: none; padding: 0;">
-                                <div id="overflow-headings" style="margin-right: 2em"></div><hr class="nav-hr">
-                                <li>
-                                    <a>Users List</a>
-                                <li>
-                                    <a>Rules & Roles</a><hr class="nav-hr">
-                                </li>
-                                </li>
-                                <li>
-                                    <a>GSoF Credits</a>
-                                </li>
-                                <li>
-                                    <a>Sign Out</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <body>
+        <div class="center">
+            <h1 id="typewriter" class="fly-in"><div class="border">PHP<b class="fade-in">|</b></div></h1>
+        </div>
+        <div class="center">
+            <div id="search" class="search fade-in">
+                <img src="https://image.flaticon.com/icons/svg/49/49116.svg"/>
+                <form action="https://google.com/search" method="get">
+                    <input type="hidden"/>
+                    <input type="text" name="q" placeholder="Search..."/>
+                </form>
             </div>
-        </nav>
-        <main role="main">
-            <section class="jumbotron container text-center shadow animate__animated animate__bounceInDown">
-                <div class="shadow animate__animated animate__flipInX logo-badge bg-white">
-                    <img class="shadow-sm" src="https://cdn.discordapp.com/attachments/603221108644249600/710948573789028462/GR_logo.gif" style="width: 100%; border-radius: 10px;"/>
-                </div>
-                <div class="animate__animated animate__heartBeat" style="margin: 1em 0;">
-                    <h2>Welcome to the</h2>
-                    <h1>Gameroom Server of Friends</h1>
-                </div>
-            </section>
-            <div id="news-section" class="jumbotron shadow content">
-                <!-- Header -->
-                <div id="header" class="row" style="margin-bottom: 3em;">
-                    <div class="col-md-10" style="margin: auto 0; text-align: right; padding: 0 2rem;">
-                        <h1 style="font-size: 3.2em;">Room News</h1>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="shadow" style="width: 75%; justify-content: right; padding: 1rem; border: 1px solid black; border-radius: 10px;">
-                            <img src="https://cdn.discordapp.com/attachments/603221108644249600/643075627343151105/finalColoured.png" width="98%"/>
-                        </div>
-                    </div>
-                </div>
-                <!-- Container -->
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="container">
-                            <h1 style="margin-bottom: 1em;">Server Announcements - Latest.</h1><hr>
-                            <!-- Start -->
-                            <div class="container shadow-sm cosy theme">
-                                <div class="row mb-3">
-                                    <div class="col-md-4">
-                                        <div style="text-align: center;">
-                                            <div class="shadow-lg announce-profile">
-                                                <img class="profile-icon shadow" src="https://cdn.discordapp.com/avatars/240786457214582784/4034b30b7c2ee659e157ed391f6ae91a.png">
-                                                <div class="detail">
-                                                    <p>Announcee: George</p>
-                                                    <p>Role: Admin/Leader</p>
-                                                    <p>Date: DD/MM/YYYY</p>
-                                                    <p>Timestamp: hh:mm:ss</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 shadow announce-message">
-                                        <h3>Message:</h3><br>
-                                        <p>Today we will be announcing the new Senior Mods. With our mods who've completed their training and were able to apply, we had 4 applications in total. I was looking for 4 spots so all 4 of them get the role; these people are Marcus, Sam, Alex and Will. Congratulations to them! 
-                                        <br>
-                                        <br>Changes to the name and more roles are set to happen in the current months... (stay tuned)</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End -->
-                            <!-- Start -->
-                            <div class="container shadow-sm cosy theme">
-                                <div class="row mb-3">
-                                    <div class="col-md-4">
-                                        <div style="text-align: center;">
-                                            <div class="shadow-lg announce-profile">
-                                                <img class="profile-icon shadow" src="https://cdn.discordapp.com/avatars/240786457214582784/4034b30b7c2ee659e157ed391f6ae91a.png">
-                                                <div class="detail">
-                                                    <p>Announcee: George</p>
-                                                    <p>Role: Admin/Leader</p>
-                                                    <p>Date: DD/MM/YYYY</p>
-                                                    <p>Timestamp: hh:mm:ss</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 shadow announce-message">
-                                        <h3>Message:</h3><br>
-                                        <p>Tonight, we would like to announce one more thing. Due to a mod stepping down recently, we are now in need of a new artist for the mod team so that Marcus isn't pressed to do all the server art. Therefore, as of now, we are putting out the application for a new moderator/artist position. The application is as follows:
-                                        <br>First Paragraph:
-                                        <br>Full name
-                                        <br>Date of birth 
-                                        <br>Username on server
-                                        <br>Role on server (especially if you have artist role)
-                                        <br>
-                                        <br>Second Paragraph:
-                                        <br>What art can you create for the server?
-                                        <br>Have you worked on logos/banners before?
-                                        <br>How much time can you put into server artwork?
-                                        <br>Do you have any mod experience? (please provide examples if possible)
-                                        <br>What server memes you are okay to draw, and ones you enjoy? ( examples and ones needing to be listed )
-                                        <br>
-                                        <br>Third Paragraph (or in New Message):
-                                        <br>Please link at least two pieces of artwork you have previously drawn, preferably your favourites
-                                        <br>
-                                        <br>If you're interested in this position then please type up your application and DM it to George (@Toby Echozap). The application will be open from now and until further notice however wont be up for to long so get applying as soon as possible. Good luck to everyone who applies!</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End -->
-                            <!-- Start -->
-                            <div class="container shadow-sm cosy theme">
-                                <div class="row mb-3">
-                                    <div class="col-md-4">
-                                        <div style="text-align: center;">
-                                            <div class="shadow-lg announce-profile">
-                                                <img class="profile-icon shadow" src="https://cdn.discordapp.com/avatars/240786457214582784/4034b30b7c2ee659e157ed391f6ae91a.png">
-                                                <div class="detail">
-                                                    <p>Announcee: George</p>
-                                                    <p>Role: Admin/Leader</p>
-                                                    <p>Date: DD/MM/YYYY</p>
-                                                    <p>Timestamp: hh:mm:ss</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 shadow announce-message">
-                                        <h3>Message:</h3>
-                                        <p>As of today Caleb @The Phantom Knight will be stepping down from his mod role after 3 longs year of service. 
-                                        <br>    
-                                        <br>this is due to work commitments and his own work load. we will be putting up a mod art application within the coming days. thank you for your service. we will be making a side role for ex mods like laim and caleb in the coming days as well.
-                                        <br>
-                                        <br>he will stay on the server to contuine his firendships and improve himself.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End -->
-                            <div class="theme seek">
-                                <a href="#"><h5 class="cosy text-center">See More...</h5></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7 theme">
-                        <div class="cosy">
-                            <p>Sample Text...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer class="footer" style="background-color: #e7e5d7;">
-            <div class="footer-container">
-                <div style="margin: 2rem;">
-                    <p style="display: inline-block; margin-right: 1rem;">Powered by <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">Bootstrap</a></p>
-                    <svg class="bi bi-bootstrap-fill" width="1.5em" height="1.5em" viewbox="0 0 16 16" fill="#553A7D" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M4.002 0a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V4a4 4 0 00-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" clip-rule="evenodd"/>
-                    </svg><br>                  
-                    <p style="display: inline-block; margin-right: 1rem;">Animations by <a href="https://animate.style/" target="_blank">Animate.css</a></p>
-                    <svg class="bi bi-code-slash" width="1.5em" height="1.5em" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M4.854 4.146a.5.5 0 010 .708L1.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm6.292 0a.5.5 0 000 .708L14.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0zm-.999-3.124a.5.5 0 01.33.625l-4 13a.5.5 0 01-.955-.294l4-13a.5.5 0 01.625-.33z" clip-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div style="margin: 2rem;">
-                    <p style="display: inline-block; margin-right: 1rem;">Find us on <a href="https://discord.com" target="_blank">Discord</a></p>
-                    <img src="assets/images/Discord-Logo-Color.svg" width="30"/>
-                    <p style="margin: auto;">Gameroom Server of Friends &copy 2020-21</p>
-                </div>
-            </div>
-        </footer>
+        </div>
+        <script>
+            const dict = ["Pointless Headache Program", "PTSD Hortative Programming", "Problematic Hate-crime Program", "Pretty Horrific Programming"]
+            var index = 0;
+            var item = 0;
+            function visible(){
+                var elem = document.getElementById("search").style.opacity = "1"
+            }
+            function removeText(){
+                index = 0
+                let cursor = document.createElement("b")
+                cursor.classList.add("cursor-animate")
+
+                document.getElementById("typewriter").innerHTML = ""
+                cursor.appendChild(document.createTextNode("|"), cursor)
+                document.getElementById("typewriter").appendChild(cursor)
+
+                setTimeout(typeWriter, 1000, dict[item], 100)
+                if (item < dict.length - 1){
+                    item ++
+                } else {item = 0}
+            }
+
+            function typeWriter(text, speed) {
+                if (index < text.length){
+                    var node = document.createTextNode(text.charAt(index))
+                    var elem = document.getElementById("typewriter")
+                    elem.insertBefore(node, elem.childNodes[index])
+
+                    index ++
+                    setTimeout(typeWriter, speed, text, speed)
+                }
+                else {
+                    setTimeout(removeText, 2000)
+                }
+            }
+            title_update(dict[Math.floor(Math.random() * Math.floor(dict.length))])
+
+            setTimeout(removeText, 4500)
+            setTimeout(visible, 4500)
+        </script>
     </body>
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </html>
